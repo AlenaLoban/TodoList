@@ -1,0 +1,55 @@
+.todo {
+  font-size: 24px;
+  margin-bottom: 15px;
+  padding: 13px;
+  display: flex;
+  gap: 15px;
+  place-content: center;
+  justify-content: space-between;
+  place-items: center;
+  border-radius: 15px;
+  background-color: rgb(255, 176, 187);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 176, 187, 1) 0%,
+    rgba(255, 194, 157, 1) 57%
+  );
+
+  &__completed {
+    text-decoration: line-through;
+    opacity: 0.3;
+  }
+
+  &__checkbox {
+    position: relative;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    &_active {
+      width: 20px;
+      position: absolute;
+      top: 1px;
+      left: 3px;
+    }
+  }
+
+  &__body {
+    flex: 1 1 80%;
+  }
+
+  &__settings {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 5px;
+    transition: all 2s ease 1s;
+    &__edit,
+    &__delete {
+      &:hover {
+        transform: translateY(3px);
+      }
+    }
+  }
+}

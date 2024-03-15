@@ -1,0 +1,102 @@
+.todos {
+  width: 100%;
+}
+.create {
+  color: #5c606d;
+  &__box {
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    justify-content: right;
+    place-items: center;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 520px) {
+    h2 {
+      font-size: 18px;
+    }
+  }
+}
+.newTodo {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  font-size: 24px;
+
+  &__inputBox {
+    flex: 0 1 80%;
+    transition: all 3s ease 1s;
+    position: relative;
+
+    input {
+      position: relative;
+      display: block;
+      width: 100%;
+      background-color: transparent;
+      backdrop-filter: blur(18px);
+    }
+    &__icon {
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+    }
+  }
+  input,
+  button {
+    display: block;
+    border: none;
+    box-shadow: 0px 0px 20px #e4e2e2;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  button {
+    color: white;
+    background-color: rgba(255, 194, 157, 1);
+    cursor: pointer;
+    &:active {
+      transform: translateY(4px);
+    }
+    &:hover {
+      background-color: rgba(255, 176, 187, 1);
+    }
+  }
+}
+.filter {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  ul {
+    display: flex;
+    gap: 15px;
+    transition: all 3s ease 1s;
+
+    li {
+      cursor: pointer;
+      font-size: 18px;
+      padding: 10px 15px 10px 15px;
+      background: #ffc29d;
+      border-radius: 10px;
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+    .active {
+      background-color: #ffb0bb;
+    }
+    @media (max-width: 520px) {
+      gap: 10px;
+      li {
+        padding: 10px;
+        font-size: 17px;
+      }
+    }
+  }
+}
