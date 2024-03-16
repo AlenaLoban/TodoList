@@ -53,10 +53,13 @@ export const todoSlice = createSlice({
     toogleFilter: (state, action: PayloadAction<number>) => {
       state.filter = action.payload;
     },
+    reorderTodos:(state, action: PayloadAction<ITodo[]>)=>{
+      state.todos = action.payload
+    },
   },
 });
 
-export const { addTodo, removeTodo, toogleStatus, toogleFilter } = todoSlice.actions;
+export const { addTodo, removeTodo, toogleStatus, toogleFilter, reorderTodos } = todoSlice.actions;
 export const selectTodo = (state: RootState) => state.todo.todos;
 export const selectFilter = (state: RootState) => state.todo.filter;
 
